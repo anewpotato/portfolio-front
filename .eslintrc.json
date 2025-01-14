@@ -14,7 +14,12 @@
     "project": "./tsconfig.json" // TypeScript 설정 파일 지정
   },
   "rules": {
-    "prettier/prettier": "error", // Prettier 규칙 위반 시 오류로 처리
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ], // Prettier 규칙 위반 시 오류로 처리
     "react/react-in-jsx-scope": "off", // Next.js에서는 React import가 필요없으므로 비활성화
     "react/prop-types": "off", // TypeScript에서는 PropTypes 필요 없음
     "react/jsx-filename-extension": ["warn", { "extensions": [".tsx"] }], // JSX 파일 확장자 설정
@@ -24,5 +29,13 @@
     "react-hooks/rules-of-hooks": "error", // React hooks 규칙 강제
     "react-hooks/exhaustive-deps": "warn", // React hooks 의존성 배열 규칙
     "react-hooks/no-namespace": "off" // 필요시 사용
-  }
+  },
+  "overrides": [
+    {
+      "files": ["app/api/**/*.ts", "app/api/**/*.tsx"],
+      "rules": {
+        "import/prefer-default-export": "off"
+      }
+    }
+  ]
 }
