@@ -3,7 +3,7 @@
     "baseUrl": ".",
     "paths": {
       "@app/*": ["app/*"],
-      "@styles/*": ["styles/*"]
+      "@public/*": ["public/*"]
     },
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
