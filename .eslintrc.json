@@ -1,0 +1,28 @@
+{
+  "extends": [
+    "next/core-web-vitals", // Next.js 기본 규칙
+    "next/typescript", // TypeScript 설정
+    "airbnb", // Airbnb 기본 규칙
+    "airbnb-typescript", // Airbnb TypeScript 규칙
+    "prettier" // Prettier와의 충돌 방지
+  ],
+  "plugins": ["react", "import", "prettier"], // react-hooks 플러그인 제거
+  "parser": "@typescript-eslint/parser", // TypeScript 파서
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "project": "./tsconfig.json" // TypeScript 설정 파일 지정
+  },
+  "rules": {
+    "prettier/prettier": "error", // Prettier 규칙 위반 시 오류로 처리
+    "react/react-in-jsx-scope": "off", // Next.js에서는 React import가 필요없으므로 비활성화
+    "react/prop-types": "off", // TypeScript에서는 PropTypes 필요 없음
+    "react/jsx-filename-extension": ["warn", { "extensions": [".tsx"] }], // JSX 파일 확장자 설정
+    "no-console": "warn", // console.log 사용 시 경고
+    "@typescript-eslint/no-unused-vars": "warn", // TypeScript에서 미사용 변수 경고
+    "@typescript-eslint/explicit-module-boundary-types": "off", // 함수 반환 타입 명시 강제하지 않기
+    "react-hooks/rules-of-hooks": "error", // React hooks 규칙 강제
+    "react-hooks/exhaustive-deps": "warn", // React hooks 의존성 배열 규칙
+    "react-hooks/no-namespace": "off" // 필요시 사용
+  }
+}
