@@ -1,6 +1,6 @@
 import '@styles/header.scss';
 
-import { pacificoFont } from 'src/constant/font/pacifico';
+import { pacificoFont } from 'src/constant/pacifico';
 import Navigation from './Navigation';
 
 export default function Header() {

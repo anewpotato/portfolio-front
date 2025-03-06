@@ -1,0 +1,11 @@
+.footer {
+  @apply snap-center 
+  text-center 
+  py-2 
+  text-xs 
+  font-bold 
+  text-gray-100 
+  bg-gradient-to-r 
+  from-footer-start 
+  to-footer-end;
+}

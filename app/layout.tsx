@@ -16,10 +16,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="kr">
-      <body className="min-h-screen min-w-fit flex flex-col">
+    <html
+      lang="kr"
+      className="scroll-smooth snap-y snap-mandatory h-screen overflow-y-scroll"
+    >
+      <body className="min-w-fit flex flex-col">
         <Header />
-        <section className="flex-1 container ">{children}</section>
+        <main className="flex-1 container mx-auto py-10 flex flex-col gap-32">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
