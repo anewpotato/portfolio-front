@@ -4,22 +4,17 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { useRef } from 'react';
 import useUnderline from '@hooks/useUnderline';
-import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '@src/store';
 import { setSelectedNavigationIndex } from '@src/store/navigation/navigationSlice';
+import useRedux from '@src/hooks/useRedux';
 
 export default function Navigation() {
-  const { list: menuList, selectedIndex } = useSelector(
-    (state: RootState) => state.navigation,
-  );
-
-  const dispatch = useDispatch();
   const itemRefs = useRef<(HTMLLIElement | null)[]>([]);
+  const [{ list: menuList, selectedIndex }, updater] = useRedux('navigation');
 
   const underlineStyle = useUnderline(itemRefs, selectedIndex);
 
   const handleNavigationClick = (index: number) => {
-    dispatch(setSelectedNavigationIndex(index));
+    updater(setSelectedNavigationIndex, index);
   };
 
   return (

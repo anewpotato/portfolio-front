@@ -1,10 +1,11 @@
 'use client';
 
-import { RootState } from '@src/store';
+import useRedux from '@src/hooks/useRedux';
+import useScrollDirection from '@src/hooks/useScrollDirection';
 import { setSelectedNavigationIndex } from '@src/store/navigation/navigationSlice';
+import { NavigationType } from '@src/types/header';
 import { motion, useAnimation } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useEffect, useRef } from 'react';
 
 export default function AnimationSection({
   children,
@@ -13,35 +14,18 @@ export default function AnimationSection({
   children: React.ReactNode;
   id: string;
 }) {
-  const list = useSelector((state: RootState) => state.navigation.list);
-  const dispatch = useDispatch();
+  const [{ list }, updater] = useRedux('navigation');
   const ref = useRef<HTMLElement>(null);
   const controls = useAnimation();
-  const [scrollDir, setScrollDir] = useState<'up' | 'down'>('down');
-  const prevScrollY = useRef<number>(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      if (currentScrollY > prevScrollY.current) {
-        setScrollDir('down');
-      } else {
-        setScrollDir('up');
-      }
-      prevScrollY.current = currentScrollY;
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const scrollDir = useScrollDirection();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          const index = list.findIndex((nav) => nav.id === id);
+          const index = list.findIndex((nav: NavigationType) => nav.id === id);
 
-          dispatch(setSelectedNavigationIndex(index));
+          updater(setSelectedNavigationIndex, index);
 
           controls.start('visible');
         } else {
@@ -53,13 +37,13 @@ export default function AnimationSection({
 
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
-  }, [controls, dispatch, id, list]);
+  }, [controls, id, list, updater]);
 
   return (
     <motion.section
       ref={ref}
       id={String(id).toLowerCase()}
-      className="snap-center scroll-mt-16 h-[calc(100vh-144px)] flex items-center justify-center shadow-2xl border-2 rounded-lg bg-white"
+      className="snap-center scroll-mt-16 h-[calc(100vh-144px)] flex items-center justify-center shadow-xl border-2 rounded-lg bg-white"
       initial="hidden"
       animate={controls}
       variants={{

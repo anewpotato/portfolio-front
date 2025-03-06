@@ -4,7 +4,7 @@ import { NavigationType } from '@src/types/header';
 
 export type NavigationSliceType = {
   selectedIndex: number;
-  list: NavigationType;
+  list: NavigationType[];
 };
 
 // Define the initial state using that type

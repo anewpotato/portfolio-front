@@ -7,9 +7,8 @@ import Profile from '@components/Profile';
 import Projects from '@components/Projects';
 import Skills from '@components/Skills';
 import AnimationSection from '@components/AnimationSection';
-import { useSelector } from 'react-redux';
-import { RootState } from '@src/store';
 import { ReactElement } from 'react';
+import useRedux from '@src/hooks/useRedux';
 
 const map: {
   [key: string]: ReactElement;
@@ -23,7 +22,8 @@ const map: {
 };
 
 export default function Page() {
-  const sections = useSelector((state: RootState) => state.navigation.list);
+  const [{ list: sections }] = useRedux('navigation');
+
   return sections.map(({ id }) => (
     <AnimationSection key={id} id={id}>
       {map[id]}
