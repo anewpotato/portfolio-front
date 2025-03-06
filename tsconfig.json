@@ -2,12 +2,11 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@src/*": ["public/*"],
+      "@src/*": ["src/*"],
       "@styles/*": ["styles/*"],
       "@components/*": ["src/components/*"],
       "@hooks/*": ["src/hooks/*"],
-      "@store/*": ["src/store/*"],
-      "@types/*": ["src/types/*"]
+      "@store/*": ["src/store/*"]
     },
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,

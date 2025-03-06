@@ -4,6 +4,7 @@ import '@styles/global.scss';
 import Header from '@components/Header';
 import { Metadata } from 'next';
 import Footer from '@components/Footer';
+import ReduxProvider from '@components/lib/ReduxProvider';
 
 export const metadata: Metadata = {
   title: 'Yu SeungJong Portfolio',
@@ -21,11 +22,13 @@ export default function RootLayout({
       className="scroll-smooth snap-y snap-mandatory h-screen overflow-y-scroll"
     >
       <body className="min-w-fit flex flex-col">
-        <Header />
-        <main className="flex-1 container mx-auto py-10 flex flex-col gap-32">
-          {children}
-        </main>
-        <Footer />
+        <ReduxProvider>
+          <Header />
+          <main className="flex-1 container mx-auto py-10 flex flex-col gap-32">
+            {children}
+          </main>
+          <Footer />
+        </ReduxProvider>
       </body>
     </html>
   );

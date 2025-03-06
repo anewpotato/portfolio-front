@@ -2,32 +2,53 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-
-const menuList = [
-  { label: 'Profile', to: '#profile' },
-  { label: 'Skills', to: '#skills' },
-  { label: 'Career', to: '#career' },
-  { label: 'Projects', to: '#projects' },
-  { label: 'Etc', to: '#etc' },
-  { label: 'Contact', to: '#contact' },
-];
+import { useRef } from 'react';
+import useUnderline from '@hooks/useUnderline';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '@src/store';
+import { setSelectedNavigationIndex } from '@src/store/navigation/navigationSlice';
 
 export default function Navigation() {
+  const { list: menuList, selectedIndex } = useSelector(
+    (state: RootState) => state.navigation,
+  );
+
+  const dispatch = useDispatch();
+  const itemRefs = useRef<(HTMLLIElement | null)[]>([]);
+
+  const underlineStyle = useUnderline(itemRefs, selectedIndex);
+
+  const handleNavigationClick = (index: number) => {
+    dispatch(setSelectedNavigationIndex(index));
+  };
+
   return (
     <nav>
-      <ul className="header-navigation header-navigation-lg">
-        {menuList.map(({ label, to }) => (
+      <ul className="relative flex space-x-6">
+        {menuList.map(({ id, to }, index) => (
           <motion.li
-            className="text-2xl font-bold italic"
-            key={label}
+            ref={(el) => {
+              if (el) itemRefs.current[index] = el;
+            }}
+            key={id}
+            className="text-2xl font-bold italic cursor-pointer"
             whileHover={{
               scale: 0.8,
-              transition: { type: 'spring', stiffness: 200 },
             }}
           >
-            <Link href={to}>{label}</Link>
+            <Link href={to} onClick={() => handleNavigationClick(index)}>
+              {id}
+            </Link>
           </motion.li>
         ))}
+        <motion.div
+          layoutId="underline"
+          className="absolute bottom-[-17px] h-1 rounded-sm bg-[#2D594A] transition-all duration-500"
+          style={{
+            width: `${underlineStyle.width}px`,
+            left: `${underlineStyle.left}px`,
+          }}
+        />
       </ul>
       <span className="material-icons-round text-4xl visible flex lg:hidden">
         menu

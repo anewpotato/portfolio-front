@@ -1,3 +1,3 @@
-export default function Carrer() {
-  return <section>Carrer 섹션</section>;
+export default function Career() {
+  return <section>Career 섹션</section>;
 }

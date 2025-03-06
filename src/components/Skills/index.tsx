@@ -1,4 +1,4 @@
-export default function Skils() {
+export default function Skills() {
   return (
     <div className="">
       Skils 섹션

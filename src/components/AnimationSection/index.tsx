@@ -1,7 +1,10 @@
 'use client';
 
+import { RootState } from '@src/store';
+import { setSelectedNavigationIndex } from '@src/store/navigation/navigationSlice';
 import { motion, useAnimation } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function AnimationSection({
   children,
@@ -10,6 +13,8 @@ export default function AnimationSection({
   children: React.ReactNode;
   id: string;
 }) {
+  const list = useSelector((state: RootState) => state.navigation.list);
+  const dispatch = useDispatch();
   const ref = useRef<HTMLElement>(null);
   const controls = useAnimation();
   const [scrollDir, setScrollDir] = useState<'up' | 'down'>('down');
@@ -34,6 +39,10 @@ export default function AnimationSection({
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
+          const index = list.findIndex((nav) => nav.id === id);
+
+          dispatch(setSelectedNavigationIndex(index));
+
           controls.start('visible');
         } else {
           controls.start('hidden');
@@ -44,12 +53,12 @@ export default function AnimationSection({
 
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
-  }, [controls]);
+  }, [controls, dispatch, id, list]);
 
   return (
     <motion.section
       ref={ref}
-      id={id}
+      id={String(id).toLowerCase()}
       className="snap-center scroll-mt-16 h-[calc(100vh-144px)] flex items-center justify-center shadow-2xl border-2 rounded-lg bg-white"
       initial="hidden"
       animate={controls}
