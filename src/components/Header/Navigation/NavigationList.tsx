@@ -4,12 +4,16 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { useRef } from 'react';
 import useUnderline from '@hooks/useUnderline';
-import { setSelectedNavigationIndex } from '@src/store/navigation/navigationSlice';
+import {
+  NavigationSliceType,
+  setSelectedNavigationIndex,
+} from '@src/store/navigation/navigationSlice';
 import useRedux from '@src/hooks/useRedux';
 
 export default function NavigationList() {
   const itemRefs = useRef<(HTMLLIElement | null)[]>([]);
-  const [{ list: menuList, selectedIndex }, updater] = useRedux('navigation');
+  const [{ list: menuList, selectedIndex }, updater] =
+    useRedux<NavigationSliceType>('navigation');
 
   const underlineStyle = useUnderline(itemRefs, selectedIndex);
 

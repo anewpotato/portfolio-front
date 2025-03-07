@@ -12,8 +12,10 @@ type ActionType<T> = (payload: T) => PayloadAction;
  *   <P>(action: ActionType<P>, payload: P) => void
  * ]}
  */
-export default function useRedux(key: string) {
-  const targetState = useSelector((state: RootState) => state[key]);
+export default function useRedux<T>(
+  key: string,
+): [T, <P>(action: ActionType<P>, payload: P) => void] {
+  const targetState: T = useSelector((state: RootState) => state[key]);
   const dispatch = useDispatch();
   const actionCallback = <P>(action: ActionType<P>, payload: P) => {
     dispatch(action(payload));

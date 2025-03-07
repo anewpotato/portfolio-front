@@ -2,7 +2,10 @@
 
 import useRedux from '@src/hooks/useRedux';
 import useScrollDirection from '@src/hooks/useScrollDirection';
-import { setSelectedNavigationIndex } from '@src/store/navigation/navigationSlice';
+import {
+  NavigationSliceType,
+  setSelectedNavigationIndex,
+} from '@src/store/navigation/navigationSlice';
 import { NavigationType } from '@src/types/header';
 import { motion, useAnimation } from 'framer-motion';
 import { useEffect, useRef } from 'react';
@@ -15,7 +18,7 @@ export default function AnimationSection({
   children: React.ReactNode;
   id: string;
 }) {
-  const [{ list }, updater] = useRedux('navigation');
+  const [{ list }, updater] = useRedux<NavigationSliceType>('navigation');
   const ref = useRef<HTMLElement>(null);
   const controls = useAnimation();
   const scrollDir = useScrollDirection();
