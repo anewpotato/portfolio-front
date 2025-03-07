@@ -6,6 +6,7 @@ import { setSelectedNavigationIndex } from '@src/store/navigation/navigationSlic
 import { NavigationType } from '@src/types/header';
 import { motion, useAnimation } from 'framer-motion';
 import { useEffect, useRef } from 'react';
+import Title from './Title';
 
 export default function AnimationSection({
   children,
@@ -43,7 +44,7 @@ export default function AnimationSection({
     <motion.section
       ref={ref}
       id={String(id).toLowerCase()}
-      className="snap-center scroll-mt-16 h-[calc(100vh-144px)] flex items-center justify-center shadow-xl border-2 rounded-lg bg-white sm:overflow-auto"
+      className="relative snap-center scroll-mt-16 h-[calc(100vh-144px)] flex items-center justify-center shadow-xl border-2 rounded-lg bg-white sm:overflow-y-auto sm:overflow-x-hidden"
       initial="hidden"
       animate={controls}
       variants={{
@@ -59,6 +60,7 @@ export default function AnimationSection({
         },
       }}
     >
+      <Title title={id} />
       {children}
     </motion.section>
   );
