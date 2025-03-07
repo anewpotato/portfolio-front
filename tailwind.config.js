@@ -6,6 +6,8 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: { sm: { min: '500px' } },
+
       colors: {
         header: {
           start: 'rgba(0, 180, 216, 1)',
