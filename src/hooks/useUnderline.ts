@@ -28,7 +28,7 @@ export default function useUnderline(
         setUnderlineStyle({ width: offsetWidth, left: offsetLeft - 25 });
       }
     }
-  }, [index]);
+  }, [index, itemRefs]);
 
   return underlineStyle;
 }
