@@ -9,6 +9,7 @@ import Skills from '@components/Skills';
 import AnimationSection from '@components/AnimationSection';
 import { ReactElement } from 'react';
 import useRedux from '@src/hooks/useRedux';
+import { NavigationSliceType } from '@src/store/navigation/navigationSlice';
 
 const map: {
   [key: string]: ReactElement;
@@ -22,7 +23,7 @@ const map: {
 };
 
 export default function Page() {
-  const [{ list: sections }] = useRedux('navigation');
+  const [{ list: sections }] = useRedux<NavigationSliceType>('navigation');
 
   return sections.map(({ id }) => (
     <AnimationSection key={id} id={id}>

@@ -23,7 +23,7 @@ export default function Menu() {
   useEffect(() => {
     if (isOpen) controls.start('visible');
     else controls.start('hidden');
-  }, [isOpen]);
+  }, [controls, isOpen]);
 
   const handleNavigationClick = (index: number) => {
     updater(setSelectedNavigationIndex, index);
@@ -51,11 +51,12 @@ export default function Menu() {
             opacity: 0,
             y: 50,
             transition: { duration: animationDuration, ease: 'easeIn' },
+            display: 'none',
           },
           visible: {
             opacity: 1,
-
             transition: { duration: animationDuration, ease: 'easeOut' },
+            display: 'block',
           },
         }}
       >
