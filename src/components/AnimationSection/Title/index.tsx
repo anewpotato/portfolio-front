@@ -10,6 +10,7 @@ export default function Title({ title }: { title: string }) {
         src="/image/Vector 1.svg"
         width={150}
         height={30}
+        style={{ width: 'auto' }}
       />
       <Image
         alt=""
@@ -17,10 +18,11 @@ export default function Title({ title }: { title: string }) {
         src="/image/Vector 2.svg"
         width={150}
         height={30}
+        style={{ width: 'auto' }}
       />
       <div className="flex w-11/12 absolute top-6 left-14">
         <span className={` text-4xl ${pacificoFont.className}`}>{title}</span>
-        <hr className="ml-6 w-full border-t-2 border-gray-300 my-4" />
+        <hr className="ml-16 w-full border-t-2 border-gray-300 my-4" />
       </div>
     </>
   );

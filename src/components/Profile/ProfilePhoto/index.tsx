@@ -9,6 +9,7 @@ export default function ProfilePhoto() {
           width={104}
           height={110}
           alt="profile_photo_img"
+          style={{ width: 104, height: 110 }}
         />
       </div>
     </div>

@@ -16,7 +16,7 @@ const profileInfoList: {
 
 export default function Profile() {
   return (
-    <div className="flex w-full h-full p-24 gap-10 lg:flex-row sm:flex-col">
+    <>
       <div className="basis-1/4">
         <ProfilePhoto />
         {profileInfoList.map(({ key, text, type }) => (
@@ -33,6 +33,6 @@ export default function Profile() {
       <div className="basis-3/4 py-5">
         <Introduction />
       </div>
-    </div>
+    </>
   );
 }

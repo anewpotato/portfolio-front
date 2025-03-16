@@ -10,7 +10,14 @@ export default function ProfileInformation({
 }: ProfileInformationType) {
   return (
     <div className="flex gap-4 border-b-2 border-dashed mt-2">
-      <Image className="pb-1" src={src} width={24} height={24} alt={alt} />
+      <Image
+        className="pb-1"
+        src={src}
+        width={24}
+        height={24}
+        alt={alt}
+        style={{ width: 'auto', height: 24 }}
+      />
       <span className="font-semibold ">
         {type === 'link' ? (
           <Link className="hover:text-sky-400" href={text} target="_blank">
