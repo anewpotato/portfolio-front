@@ -1,120 +1,30 @@
 import { useState } from 'react';
 import Category from './Category';
-import SkillChip from './SkillChip';
-import SkillDetail from './SkillDetail';
-
-type SkillsInformationType = { key: string; description: string }[][];
-
-const skillsInformation: SkillsInformationType = [
-  [
-    {
-      key: 'HTML',
-      description: '1. 내용입니다.\n 2. 내용입니다.\n 3. 내용입니다.',
-    },
-    {
-      key: 'CSS',
-      description: '~~~',
-    },
-    {
-      key: 'javascript',
-      description: '~~~',
-    },
-    {
-      key: 'typescript',
-      description: '~~~',
-    },
-    {
-      key: 'react',
-      description: '~~~',
-    },
-    {
-      key: 'next.js',
-      description: '~~~',
-    },
-    {
-      key: 'redux',
-      description: '~~~',
-    },
-    {
-      key: 'mui',
-      description: '~~~',
-    },
-    {
-      key: 'tailwindcss',
-      description: '~~~',
-    },
-    {
-      key: 'storybook',
-      description: '~~~',
-    },
-  ],
-  [
-    { key: 'Spring', description: 'aa' },
-    { key: 'Springboot', description: 'aa' },
-    { key: 'postgreSQL', description: 'aa' },
-  ],
-  [
-    {
-      key: 'docker',
-      description: '~~~',
-    },
-    {
-      key: 'git',
-      description: '~~~',
-    },
-    {
-      key: 'jira',
-      description: '~~~',
-    },
-    {
-      key: 'confluence',
-      description: '~~~',
-    },
-    {
-      key: 'slack',
-      description: '~~~',
-    },
-    {
-      key: 'REST API',
-      description: '~~~',
-    },
-  ],
-];
+import SkillsDetail from './SkillsDetail';
 
 export default function Skills() {
   const [selectedView, setSelectedView] = useState<number>(0);
   const [selectedSkill, setSelectedSkill] = useState<number>(0);
-
-  const handleViewOnClick = (index: number) => {
-    setSelectedView(index);
-  };
-
-  const handleSkillOnClick = (index: number) => {
-    setSelectedSkill(index);
-  };
 
   return (
     <div className="w-full flex flex-col gap-3">
       <Category
         list={['간략히 보기', '상세히 보기']}
         selectedIndex={selectedView}
-        handleOnClick={handleViewOnClick}
+        handleOnClick={setSelectedView}
       />
       <Category
         list={['Frontend', 'Backend', '기타']}
         selectedIndex={selectedSkill}
-        handleOnClick={handleSkillOnClick}
+        handleOnClick={setSelectedSkill}
       />
       <div
         className={`border-2 rounded-lg p-9 ${selectedView === 0 ? 'flex flex-wrap gap-3' : 'grid xl:grid-cols-2 gap-y-10'}`}
       >
-        {skillsInformation[selectedSkill]?.map(({ key, description }) =>
-          selectedView === 0 ? (
-            <SkillChip key={key} label={key} />
-          ) : (
-            <SkillDetail key={key} label={key} description={description} />
-          ),
-        )}
+        <SkillsDetail
+          selectedView={selectedView}
+          selectedSkill={selectedSkill}
+        />
       </div>
     </div>
   );

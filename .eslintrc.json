@@ -29,7 +29,13 @@
     "react-hooks/rules-of-hooks": "error", // React hooks 규칙 강제
     "react-hooks/exhaustive-deps": "warn", // React hooks 의존성 배열 규칙
     "react-hooks/no-namespace": "off", // 필요시 사용
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "react/require-default-props": [
+      "error",
+      {
+        "functions": "defaultArguments" // 구조 분해 할당 기본값 허용
+      }
+    ]
   },
   "overrides": [
     {

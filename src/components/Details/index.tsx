@@ -1,28 +1,35 @@
 import Image from 'next/image';
+import { ReactNode } from 'react';
 
-type SkillDetailPropsType = {
+type DetailsPropsType = {
+  src: string;
   label: string;
-  description: string;
+  children: ReactNode;
+  width?: number;
+  height?: number;
 };
 
-export default function SkillDetail({
+export default function Details({
+  src,
   label,
-  description,
-}: SkillDetailPropsType) {
+  children,
+  width = 50,
+  height = 50,
+}: DetailsPropsType) {
   return (
     <div className="flex divide-x-4">
       <div className="flex flex-col gap-1 basis-1/6 items-center">
         <Image
           alt=""
-          src={`/image/skills/${label}.svg`}
-          width={50}
-          height={50}
+          src={src}
+          width={width}
+          height={height}
           style={{ height: 'auto' }}
         />
         <span className="font-bold">{label}</span>
       </div>
       <div className="basis-5/6 px-3 py-1 whitespace-pre-line text-sm">
-        {description}
+        {children}
       </div>
     </div>
   );
