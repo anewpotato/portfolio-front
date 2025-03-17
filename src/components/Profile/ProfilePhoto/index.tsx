@@ -5,7 +5,7 @@ export default function ProfilePhoto() {
     <div className="flex justify-center mb-9">
       <div className="flex rounded-full items-center justify-center w-44 h-44 bg-[#DBD9D9]">
         <Image
-          src="/image/user.png"
+          src="/image/profile/user.png"
           width={104}
           height={110}
           alt="profile_photo_img"

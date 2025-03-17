@@ -22,7 +22,7 @@ export default function Profile() {
         {profileInfoList.map(({ key, text, type }) => (
           <ProfileInformation
             key={key}
-            src={`/image/${key}.png`}
+            src={`/image/profile/${key}.png`}
             alt={`profile_${key}_img`}
             text={text}
             type={type}

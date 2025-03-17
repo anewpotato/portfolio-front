@@ -1,6 +1,12 @@
-import { ProfileInformationType } from '@src/types/contents/profile';
 import Image from 'next/image';
 import Link from 'next/link';
+
+type ProfileInformationType = {
+  src: string;
+  alt: string;
+  text: string;
+  type: 'text' | 'link';
+};
 
 export default function ProfileInformation({
   src,

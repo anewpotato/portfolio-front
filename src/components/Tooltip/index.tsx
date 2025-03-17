@@ -1,4 +1,9 @@
-import { TooltipType } from '@src/types';
+import { ReactNode } from 'react';
+
+type TooltipType = {
+  children: ReactNode;
+  text: string;
+};
 
 export default function Tooltip({ children, text = '' }: TooltipType) {
   if (text.length === 0) return children;
