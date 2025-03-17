@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Category from './Category';
 import SkillChip from './SkillChip';
+import SkillDetail from './SkillDetail';
 
 type SkillsInformationType = { key: string; description: string }[][];
 
@@ -8,7 +9,7 @@ const skillsInformation: SkillsInformationType = [
   [
     {
       key: 'HTML',
-      description: '~~~',
+      description: '1. 내용입니다.\n 2. 내용입니다.\n 3. 내용입니다.',
     },
     {
       key: 'CSS',
@@ -104,10 +105,16 @@ export default function Skills() {
         selectedIndex={selectedSkill}
         handleOnClick={handleSkillOnClick}
       />
-      <div className="border-2 rounded-lg p-9 flex flex-wrap gap-3">
-        {skillsInformation[selectedSkill]?.map(({ key, description }) => (
-          <SkillChip key={key} label={key} />
-        ))}
+      <div
+        className={`border-2 rounded-lg p-9 ${selectedView === 0 ? 'flex flex-wrap gap-3' : 'grid xl:grid-cols-2 gap-y-10'}`}
+      >
+        {skillsInformation[selectedSkill]?.map(({ key, description }) =>
+          selectedView === 0 ? (
+            <SkillChip key={key} label={key} />
+          ) : (
+            <SkillDetail key={key} label={key} description={description} />
+          ),
+        )}
       </div>
     </div>
   );
