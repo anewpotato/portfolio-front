@@ -1,3 +1,18 @@
+import { useState } from 'react';
+import Category from '../Skills/Category';
+import ProjectsDetail from './ProjectsDetail';
+
 export default function Projects() {
-  return <section>Projects 섹션</section>;
+  const [selectedProgress, setSelectedProgress] = useState<number>(0);
+
+  return (
+    <div className="w-full flex flex-col flex-1 gap-3">
+      <Category
+        list={['완료', '진행중', '진행예정']}
+        selectedIndex={selectedProgress}
+        handleOnClick={setSelectedProgress}
+      />
+      <ProjectsDetail selectedProgress={selectedProgress} />
+    </div>
+  );
 }

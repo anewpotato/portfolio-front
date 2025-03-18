@@ -45,6 +45,14 @@ const skillsInformation: SkillsInformationType = [
       key: 'storybook',
       description: [],
     },
+    {
+      key: 'prettier',
+      description: [],
+    },
+    {
+      key: 'eslint',
+      description: [],
+    },
   ],
   [
     { key: 'Spring', description: [] },

@@ -32,7 +32,8 @@ export default function Menu() {
   return (
     <>
       <motion.span
-        className="block material-icons-round text-4xl visible lg:hidden cursor-pointer"
+        className="block !visible lg:!hidden cursor-pointer material-symbols-rounded"
+        style={{ fontSize: '2rem' }}
         onClick={() => setIsOpen(!isOpen)}
         animate={{
           rotate: isOpen ? -90 : 0,

@@ -1,3 +1,89 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Google Material Icon 지정 스타일. */
+:root {
+  --font-variation-wght: 'wght' 400;
+  --font-variation-fill: 'FILL' 0;
+  --font-variation-opsz: 'opsz' 48;
+  --font-variation-grad: 'GRAD' 0;
+}
+
+.icon-style {
+  font-variation-settings:
+    var(--font-variation-wght), var(--font-variation-fill),
+    var(--font-variation-opsz), var(--font-variation-grad);
+}
+
+/* Weight (wght) */
+.icon-weight-100 {
+  --font-variation-wght: 'wght' 100;
+}
+
+.icon-weight-200 {
+  --font-variation-wght: 'wght' 200;
+}
+
+.icon-weight-300 {
+  --font-variation-wght: 'wght' 300;
+}
+
+.icon-weight-400 {
+  --font-variation-wght: 'wght' 400; /* 기본 값 */
+}
+
+.icon-weight-500 {
+  --font-variation-wght: 'wght' 500;
+}
+
+.icon-weight-600 {
+  --font-variation-wght: 'wght' 600;
+}
+
+.icon-weight-700 {
+  --font-variation-wght: 'wght' 700;
+}
+
+/* Grade (GRAD) */
+.icon-grade-neg-50 {
+  --font-variation-grad: 'GRAD' -50;
+}
+
+.icon-grade-0 {
+  --font-variation-grad: 'GRAD' 0; /* 기본 값 */
+}
+
+.icon-grade-100 {
+  --font-variation-grad: 'GRAD' 100;
+}
+
+.icon-grade-200 {
+  --font-variation-grad: 'GRAD' 200;
+}
+
+/* Optical Size (opsz) */
+.icon-optical-size-20 {
+  --font-variation-opsz: 'opsz' 20;
+}
+
+.icon-optical-size-24 {
+  --font-variation-opsz: 'opsz' 24;
+}
+
+.icon-optical-size-36 {
+  --font-variation-opsz: 'opsz' 36;
+}
+
+.icon-optical-size-48 {
+  --font-variation-opsz: 'opsz' 48; /* 기본 값 */
+}
+
+/* Fill (FILL) */
+.icon-fill-0 {
+  --font-variation-fill: 'FILL' 0; /* 외곽선만 표시 */
+}
+
+.icon-fill-1 {
+  --font-variation-fill: 'FILL' 1; /* 채워진 아이콘 */
+}
