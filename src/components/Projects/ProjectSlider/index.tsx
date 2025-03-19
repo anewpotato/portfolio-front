@@ -1,106 +1,8 @@
 import useWindowWidth from '@src/hooks/useWindowWidth';
 import { AnimatePresence } from 'framer-motion';
 import { useState, useCallback, useEffect } from 'react';
-import { ProjectsInformationType } from '@src/types/contents/projects';
+import { projectsInformation } from '@src/constant/project';
 import Card from './Card';
-
-const projectsInformation: ProjectsInformationType[] = [
-  {
-    id: 0,
-    title: 'Hanssak 디자인 시스템',
-    skills: [
-      'HTML',
-      'CSS',
-      'javascript',
-      'react',
-      'typescript',
-      'tailwindcss',
-      'google material icon',
-      'storybook',
-      'eslint',
-      'prettier',
-      'git',
-    ],
-    progress: 0,
-    image: 'design_system',
-  },
-  {
-    id: 1,
-    title: '보안 솔루션 고도화',
-    skills: [
-      'HTML',
-      'CSS',
-      'javascript',
-      'react',
-      'next.js',
-      'redux',
-      'mui',
-      'docker',
-      'eslint',
-      'prettier',
-      'git',
-    ],
-    progress: 0,
-    image: 'design_system',
-  },
-  {
-    id: 2,
-    title: '웹 플랫폼 고도화',
-    skills: [
-      'CSS',
-      'javascript',
-      'react',
-      'next.js',
-      'redux',
-      'mui',
-      'storybook',
-      'eslint',
-      'prettier',
-      'git',
-    ],
-    progress: 0,
-    image: 'design_system',
-  },
-  {
-    id: 3,
-    title: '보안 솔루션 프로토타입 구축',
-    skills: [
-      'CSS',
-      'javascript',
-      'react',
-      'next.js',
-      'redux',
-      'mui',
-      'storybook',
-      'eslint',
-      'prettier',
-      'git',
-    ],
-    progress: 0,
-    image: 'design_system',
-  },
-
-  {
-    id: 4,
-    title: '개인 포트폴리오',
-    skills: [
-      'HTML',
-      'CSS',
-      'javascript',
-      'typescript',
-      'react',
-      'next.js',
-      'redux',
-      'tailwindcss',
-      'google material icon',
-      'eslint',
-      'prettier',
-      'git',
-    ],
-    progress: 1,
-    image: 'portfolio',
-  },
-];
 
 type ArrowButtonPropsType = {
   children: string;
@@ -127,13 +29,13 @@ function ArrowButton({
   );
 }
 
-type ProjectsDetailPropsType = {
+type ProjectSliderPropsType = {
   selectedProgress: number;
 };
 
-export default function ProjectsDetail({
+export default function ProjectSlider({
   selectedProgress,
-}: ProjectsDetailPropsType) {
+}: ProjectSliderPropsType) {
   const [selectedProject, setSelectedProject] = useState<number>(0);
 
   const windowWidth = useWindowWidth();

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { skillsCategoryFilter, skillsViewFilter } from '@src/constant/skills';
 import Category from './Category';
 import SkillsDetail from './SkillsDetail';
 
@@ -9,12 +10,12 @@ export default function Skills() {
   return (
     <div className="w-full flex flex-col gap-3">
       <Category
-        list={['간략히 보기', '상세히 보기']}
+        list={skillsViewFilter}
         selectedIndex={selectedView}
         handleOnClick={setSelectedView}
       />
       <Category
-        list={['Frontend', 'Backend', '기타']}
+        list={skillsCategoryFilter}
         selectedIndex={selectedSkill}
         handleOnClick={setSelectedSkill}
       />

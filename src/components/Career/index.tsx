@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { careerFilter } from '@src/constant/career';
 import Category from '../Skills/Category';
 import CareerDetail from './CareerDetail';
 
@@ -8,7 +9,7 @@ export default function Career() {
   return (
     <div className="w-full flex flex-col gap-3">
       <Category
-        list={['최신순', '오래된 순']}
+        list={careerFilter}
         selectedIndex={selectedOrder}
         handleOnClick={setSelectedOrder}
       />

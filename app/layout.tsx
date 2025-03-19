@@ -5,12 +5,11 @@ import { Metadata } from 'next';
 import Footer from '@components/Footer';
 import ReduxProvider from '@components/lib/ReduxProvider';
 import { IconDescriptor } from 'next/dist/lib/metadata/types/metadata-types';
+import SnapWrapper from '@src/components/lib/SnapWrapper';
 
 export interface CustomIconDescriptorType extends IconDescriptor {
   precedence?: string;
 }
-
-// app/layout.tsx
 
 const icon: CustomIconDescriptorType = {
   rel: 'stylesheet',
@@ -28,23 +27,23 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  modal,
 }: {
   children: React.ReactNode;
+  modal: React.ReactNode;
 }) {
   return (
-    <html
-      lang="kr"
-      className="scroll-smooth snap-y snap-mandatory h-screen overflow-y-scroll"
-    >
+    <SnapWrapper>
       <body className="min-w-fit flex flex-col">
         <ReduxProvider>
           <Header />
           <main className="flex-1 container mx-auto py-10 flex flex-col gap-32">
             {children}
+            {modal}
           </main>
           <Footer />
         </ReduxProvider>
       </body>
-    </html>
+    </SnapWrapper>
   );
 }

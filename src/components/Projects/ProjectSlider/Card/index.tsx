@@ -3,6 +3,7 @@ import { ProjectsInformationType } from '@src/types/contents/projects';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
+import ProgressIcon from '../../ProgressIcon';
 
 const AnimationVariants = {
   center: {
@@ -37,20 +38,10 @@ export default function Card({
   title,
   skills,
   image,
-}: ProjectsInformationType & { position: string; windowWidth: number }) {
-  let iconColor: string;
-  let icon: string;
-
-  if (progress === 0) {
-    icon = 'check_circle';
-    iconColor = 'text-green-400';
-  } else if (progress === 1) {
-    icon = 'play_circle';
-    iconColor = 'text-red-400';
-  } else if (progress === 2) {
-    icon = 'keep';
-    iconColor = 'text-yellow-400';
-  }
+}: Omit<ProjectsInformationType, 'period'> & {
+  position: string;
+  windowWidth: number;
+}) {
   return (
     <motion.div
       className="flex flex-col h-full w-1/2 gap-4 p-4 lg:absolute shadow-xl border-2 rounded-lg bg-white"
@@ -65,24 +56,26 @@ export default function Card({
       }
     >
       <div className="sm:text-lg xl:text-3xl font-bold">
-        {title}
-        <span
-          className={`material-symbols-rounded icon-style icon-fill-1 ${iconColor}`}
-          style={{ fontSize: '1.2rem' }}
+        <Link
+          className="hover:text-sky-400"
+          href={`/projects/${id}`}
+          prefetch={false}
+          scroll={false}
         >
-          {icon}
-        </span>
+          {title}
+        </Link>
+        <ProgressIcon progress={progress} />
       </div>
       <Link
         className="h-full"
-        href={`/image/projects/${image}.png`}
+        href={`/image/projects/${image}`}
         target="_blank"
       >
         <div className="relative h-full border-2 flex-1 shadow-xl">
           <Image
             priority
             alt=""
-            src={`/image/projects/${image}.png`}
+            src={`/image/projects/${image}`}
             fill
             sizes="(max-width: 500px) 100vw"
           />

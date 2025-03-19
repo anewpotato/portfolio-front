@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Category from '../Skills/Category';
-import ProjectsDetail from './ProjectsDetail';
+import ProjectSlider from './ProjectSlider';
 
 export default function Projects() {
   const [selectedProgress, setSelectedProgress] = useState<number>(0);
@@ -12,7 +12,7 @@ export default function Projects() {
         selectedIndex={selectedProgress}
         handleOnClick={setSelectedProgress}
       />
-      <ProjectsDetail selectedProgress={selectedProgress} />
+      <ProjectSlider selectedProgress={selectedProgress} />
     </div>
   );
 }

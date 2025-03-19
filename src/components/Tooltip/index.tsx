@@ -1,11 +1,11 @@
 import { ReactNode } from 'react';
 
-type TooltipType = {
+type TooltipPropsType = {
   children: ReactNode;
   text: string;
 };
 
-export default function Tooltip({ children, text = '' }: TooltipType) {
+export default function Tooltip({ children, text }: TooltipPropsType) {
   if (text.length === 0) return children;
   return (
     <div className="group/tooltip w-fit relative">
