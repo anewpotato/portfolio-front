@@ -1,5 +1,5 @@
 import useWindowWidth from '@src/hooks/useWindowWidth';
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { useState, useCallback, useEffect } from 'react';
 import { projectsInformation } from '@src/constant/project';
 import Card from './Card';
@@ -79,9 +79,14 @@ export default function ProjectSlider({
     <div className="py-6 w-full h-full flex flex-col border-2 rounded-lg">
       <div className="lg:relative w-full h-full flex justify-center items-center">
         {filterProjects.length === 0 ? (
-          <div className="font-bold italic">
+          <motion.div
+            className="font-bold italic"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, ease: 'easeIn' }}
+          >
             프로젝트 정보가 존재하지 않습니다.
-          </div>
+          </motion.div>
         ) : (
           <>
             <ArrowButton

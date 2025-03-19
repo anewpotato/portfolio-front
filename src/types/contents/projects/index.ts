@@ -5,6 +5,9 @@ export type ProjectsInformationType = {
   skills: string[];
   progress: 0 | 1 | 2;
   image: string;
+  description: string;
+  role: string;
+  result: { category: string; list: string[] }[];
 };
 
 export type ProjectDetailProps = {

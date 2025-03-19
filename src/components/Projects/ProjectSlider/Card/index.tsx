@@ -1,9 +1,9 @@
-import SkillChip from '@src/components/Skills/SkillChip';
 import { ProjectsInformationType } from '@src/types/contents/projects';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import ProgressIcon from '../../ProgressIcon';
+import ProjectSkills from '../../ProjectSkills';
 
 const AnimationVariants = {
   center: {
@@ -38,7 +38,10 @@ export default function Card({
   title,
   skills,
   image,
-}: Omit<ProjectsInformationType, 'period'> & {
+}: Omit<
+  ProjectsInformationType,
+  'period' | 'description' | 'role' | 'result'
+> & {
   position: string;
   windowWidth: number;
 }) {
@@ -82,13 +85,7 @@ export default function Card({
         </div>
       </Link>
 
-      {windowWidth >= 768 && (
-        <div className="flex flex-wrap">
-          {skills.map((skill) => (
-            <SkillChip key={skill} label={skill} />
-          ))}
-        </div>
-      )}
+      {windowWidth >= 768 && <ProjectSkills skills={skills} />}
     </motion.div>
   );
 }
