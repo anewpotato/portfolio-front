@@ -6,6 +6,7 @@ import Footer from '@components/Footer';
 import ReduxProvider from '@components/lib/ReduxProvider';
 import { IconDescriptor } from 'next/dist/lib/metadata/types/metadata-types';
 import SnapWrapper from '@src/components/lib/SnapWrapper';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export interface CustomIconDescriptorType extends IconDescriptor {
   precedence?: string;
@@ -40,6 +41,7 @@ export default function RootLayout({
           <main className="flex-1 container mx-auto py-10 flex flex-col gap-32">
             {children}
             {modal}
+            <SpeedInsights />
           </main>
           <Footer />
         </ReduxProvider>
