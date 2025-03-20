@@ -6,7 +6,7 @@ export default function Etc() {
   return (
     <div className="w-full h-fit grid grid-cols-2 gap-y-8 items-start">
       {etcInformation.map(({ label, content }: EtcInformationType) => (
-        <EtcDetail label={label} content={content} />
+        <EtcDetail key={label} label={label} content={content} />
       ))}
     </div>
   );

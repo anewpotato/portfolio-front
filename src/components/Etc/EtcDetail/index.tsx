@@ -6,7 +6,7 @@ export default function EtcDetail({ label, content }: EtcInformationType) {
       <div className="basis-1/6 text-2xl font-bold">{label}</div>
       <div className="flex flex-col basis-5/6 px-3 py-1 ">
         {content.map(({ key, contents, period }, index) => (
-          <div className={index !== 0 && 'mt-5'}>
+          <div key={key} className={index !== 0 ? 'mt-5' : ''}>
             <span className="text-sm font-semibold text-gray-400">
               {period}
             </span>
