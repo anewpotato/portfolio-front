@@ -19,7 +19,7 @@ export default function Modal({ children }: ModalPropsType) {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.2, ease: 'easeIn' }}
     >
-      <div className=" bg-white w-1/2 h-5/6 shadow-2xl shadow-black/75 rounded-2xl py-4 px-8 flex flex-col gap-4">
+      <div className=" bg-white sm:w-full md:w-1/2 h-5/6 shadow-2xl shadow-black/75 rounded-2xl py-4 px-8 flex flex-col gap-4">
         <div className="text-right border-b-2">
           <motion.span
             className="material-symbols-rounded icon-style cursor-pointer"
