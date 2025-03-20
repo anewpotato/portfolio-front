@@ -8,7 +8,7 @@ export default function ContactInput({
   icon,
 }: ContactInputPropsType) {
   return (
-    <div className="relative w-1/3 px-2">
+    <div className="relative sm:w-full lg:w-1/3 lg:px-2">
       <input
         type="text"
         placeholder={placeholder}
