@@ -7,6 +7,7 @@ import ReduxProvider from '@components/lib/ReduxProvider';
 import { IconDescriptor } from 'next/dist/lib/metadata/types/metadata-types';
 import SnapWrapper from '@src/components/lib/SnapWrapper';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/next';
 
 export interface CustomIconDescriptorType extends IconDescriptor {
   precedence?: string;
@@ -42,6 +43,7 @@ export default function RootLayout({
             {children}
             {modal}
             <SpeedInsights />
+            <Analytics />
           </main>
           <Footer />
         </ReduxProvider>
