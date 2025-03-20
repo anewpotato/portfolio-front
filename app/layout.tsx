@@ -38,7 +38,7 @@ export default function RootLayout({
       <body className="min-w-fit flex flex-col">
         <ReduxProvider>
           <Header />
-          <main className="flex-1 container mx-auto py-10 flex flex-col gap-32">
+          <main className="flex-1 sm:container mx-auto py-10 flex flex-col gap-32">
             {children}
             {modal}
             <SpeedInsights />

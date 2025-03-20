@@ -27,7 +27,7 @@ export default function Page() {
 
   return sections.map(({ id }) => (
     <AnimationSection key={id} id={id}>
-      <div className="flex w-full h-full p-24 lg:flex-row sm:flex-col">
+      <div className="flex w-full h-full sm:px-4 sm:py-24 md:p-24 lg:flex-row sm:flex-col">
         {map[id]}
       </div>
     </AnimationSection>
