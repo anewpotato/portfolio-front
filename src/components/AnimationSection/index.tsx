@@ -1,7 +1,6 @@
 'use client';
 
 import useRedux from '@src/hooks/useRedux';
-import useScrollDirection from '@src/hooks/useScrollDirection';
 import {
   NavigationSliceType,
   setSelectedNavigationIndex,
@@ -21,7 +20,6 @@ export default function AnimationSection({
   const [{ list }, updater] = useRedux<NavigationSliceType>('navigation');
   const ref = useRef<HTMLElement>(null);
   const controls = useAnimation();
-  const scrollDir = useScrollDirection();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -53,13 +51,11 @@ export default function AnimationSection({
       variants={{
         hidden: {
           opacity: 0,
-          y: scrollDir === 'down' ? -50 : 50,
           transition: { duration: 0.5, ease: 'easeIn' },
         },
         visible: {
           opacity: 1,
-          y: 0,
-          transition: { duration: 0.5, ease: 'easeOut' },
+          transition: { duration: 1, ease: 'easeOut' },
         },
       }}
     >
