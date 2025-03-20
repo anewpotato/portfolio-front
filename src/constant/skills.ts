@@ -55,8 +55,8 @@ export const skillsInformation: SkillsInformationType = [
     },
   ],
   [
-    { key: 'Spring', description: [] },
-    { key: 'Springboot', description: [] },
+    { key: 'spring', description: [] },
+    { key: 'springboot', description: [] },
     { key: 'postgreSQL', description: [] },
   ],
   [
@@ -81,7 +81,7 @@ export const skillsInformation: SkillsInformationType = [
       description: [],
     },
     {
-      key: 'REST API',
+      key: 'rest api',
       description: [],
     },
   ],
