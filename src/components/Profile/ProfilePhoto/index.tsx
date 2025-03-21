@@ -3,13 +3,13 @@ import Image from 'next/image';
 export default function ProfilePhoto() {
   return (
     <div className="flex justify-center mb-9">
-      <div className="flex rounded-full items-center justify-center w-44 h-44 bg-[#DBD9D9]">
+      <div className="relative flex rounded-full items-center justify-center w-44 h-44 bg-[#DBD9D9]">
         <Image
-          src="/image/profile/user.png"
-          width={104}
-          height={110}
+          className="rounded-full border-2 border-black/45"
           alt="profile_photo_img"
-          style={{ width: 104, height: 110 }}
+          src="/image/profile/yuseungjong.jpg"
+          fill
+          sizes="(max-width: 768px) 100vw"
         />
       </div>
     </div>
