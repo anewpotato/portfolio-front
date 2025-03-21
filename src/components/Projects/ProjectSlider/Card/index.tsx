@@ -47,7 +47,7 @@ export default function Card({
 }) {
   return (
     <motion.div
-      className="flex flex-col h-full w-1/2 gap-4 p-4 lg:absolute shadow-xl border-2 rounded-lg bg-white"
+      className="flex flex-col h-full w-1/2 gap-4 p-4 lg:absolute shadow-xl border-2 rounded-lg bg-white dark:bg-slate-800"
       initial="hidden"
       animate={position}
       exit="hidden"

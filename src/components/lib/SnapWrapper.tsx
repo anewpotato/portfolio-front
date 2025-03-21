@@ -16,7 +16,7 @@ export default function SnapWrapper({
   return (
     <html
       lang="kr"
-      className={`${isDarkMode ? 'dark' : ''} bg-white dark:bg-gray-800 scroll-smooth h-screen overflow-y-scroll ${
+      className={`${isDarkMode ? 'dark' : ''} bg-white dark:bg-gray-800 dark:text-white scroll-smooth h-screen overflow-y-scroll ${
         !isProjectPage ? 'snap-y snap-mandatory' : ''
       }`}
     >

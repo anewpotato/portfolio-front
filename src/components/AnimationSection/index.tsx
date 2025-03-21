@@ -45,7 +45,7 @@ export default function AnimationSection({
     <motion.section
       ref={ref}
       id={String(id).toLowerCase()}
-      className="relative snap-center scroll-mt-16 h-[calc(100vh-144px)] flex items-center justify-center shadow-xl border-2 rounded-lg bg-white sm:overflow-y-auto sm:overflow-x-hidden"
+      className="relative snap-center scroll-mt-16 h-[calc(100vh-144px)] flex items-center justify-center shadow-xl border-2 rounded-lg bg-white dark:bg-slate-800 dark:border-yellow-300/90 sm:overflow-y-auto sm:overflow-x-hidden"
       initial="hidden"
       animate={controls}
       variants={{

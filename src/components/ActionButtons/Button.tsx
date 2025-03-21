@@ -26,7 +26,7 @@ export default function Button({
   return (
     <motion.button
       type="button"
-      className="material-symbols-rounded rounded-full sm:p-1 md:p-2 lg:p-3 cursor-pointer border bg-emerald-300 text-white icon-style icon-weight-700 icon-optical-size-24"
+      className="material-symbols-rounded rounded-full sm:p-1 md:p-2 lg:p-3 cursor-pointer border bg-emerald-300 text-white dark:text-black dark:bg-[#dfdc5e] icon-style icon-weight-700 icon-optical-size-24"
       onClick={onButtonClick}
       animate={animate}
     >

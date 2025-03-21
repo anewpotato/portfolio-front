@@ -44,12 +44,12 @@ export default function Contact() {
         <textarea
           placeholder="내용"
           name="message"
-          className="w-full h-60 p-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3bd2f6]"
+          className="w-full h-60 p-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3bd2f6] dark:bg-slate-400 dark:placeholder-white"
         />
         <button
           type="submit"
           className={`text-center w-full border ${
-            isSubmitting ? 'bg-gray-400' : 'bg-cyan-400'
+            isSubmitting ? 'bg-gray-400' : 'bg-cyan-400 dark:bg-[#005765]'
           } text-white font-semibold rounded-md px-4 py-1`}
           disabled={isSubmitting}
         >

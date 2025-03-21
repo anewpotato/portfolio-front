@@ -61,7 +61,7 @@ export default function Menu() {
           },
         }}
       >
-        <div className=" divide-solid divide-y-2 float-right border-l-4 border-[#2d594adb] p-6 w-56 h-screen text-white text-2xl font-bold bg-header-middle">
+        <div className=" divide-solid divide-y-2 float-right border-l-4 border-[#2d594adb] dark:border-yellow-300  p-6 w-56 h-screen text-white text-2xl font-bold bg-header-middle dark:bg-slate-700/90">
           {menuList.map(({ id, to }, index: number) => (
             <div
               key={id}

@@ -12,7 +12,9 @@ export default function ProjectTitle({
         {title}
       </span>
       <ProgressIcon progress={progress} />
-      <span className="text-sm font-semibold text-gray-500">{period}</span>
+      <span className="text-sm font-semibold text-gray-500 dark:text-white">
+        {period}
+      </span>
     </div>
   );
 }

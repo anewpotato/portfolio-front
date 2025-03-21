@@ -14,13 +14,11 @@ export default function Category({
   if (list.length === 0) return null;
 
   return (
-    <div className="text-end ">
+    <div className="text-end">
       {list.map((label, index) => (
         <Fragment key={label}>
           <button
-            className={
-              selectedIndex === index ? 'font-extrabold' : 'text-gray-800/95'
-            }
+            className={`${selectedIndex === index ? 'font-extrabold dark:text-indigo-400' : 'text-gray-800/95 dark:text-white'} `}
             type="button"
             onClick={() => handleOnClick(index)}
           >

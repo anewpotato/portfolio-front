@@ -41,7 +41,7 @@ export default function NavigationList() {
       ))}
       <motion.div
         layoutId="underline"
-        className="absolute bottom-[-17px] h-1 rounded-sm bg-[#2D594A] transition-all duration-500"
+        className="absolute bottom-[-17px] h-1 rounded-sm bg-[#2D594A] dark:bg-yellow-300 transition-all duration-500"
         style={{
           width: `${underlineStyle.width}px`,
           left: `${underlineStyle.left}px`,
