@@ -28,11 +28,14 @@ export default function ActionButtons() {
   };
 
   const handleFileDownloadClick = () => {
-    FileSaver.saveAs('/pdf/download.pdf', '[유승종]이력서.pdf');
+    FileSaver.saveAs(
+      '/pdf/download.pdf',
+      encodeURIComponent('[유승종]이력서.pdf'),
+    );
   };
 
   return (
-    <div className="fixed bottom-10 right-5 flex flex-col gap-2">
+    <div className="fixed bottom-10 sm:right-1 md:right-5 flex flex-col gap-2">
       <motion.div
         className="flex flex-col gap-2"
         initial="hidden"
