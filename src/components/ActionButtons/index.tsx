@@ -11,9 +11,6 @@ import { useState } from 'react';
 import FileSaver from 'file-saver';
 import Button from './Button';
 
-const iconClassName =
-  'material-symbols-rounded rounded-full sm:p-1 md:p-2 lg:p-3 cursor-pointer border bg-emerald-300 text-white icon-style icon-weight-700 icon-optical-size-24';
-
 export default function ActionButtons() {
   const [{ list: menuList }, updater] =
     useRedux<NavigationSliceType>('navigation');
@@ -48,20 +45,19 @@ export default function ActionButtons() {
       >
         <Button onButtonClick={handleFileDownloadClick}>file_save</Button>
 
-        <span className={iconClassName}>dark_mode</span>
+        <Button>dark_mode</Button>
       </motion.div>
-      <motion.span
-        className={iconClassName}
-        onClick={handleActionClick}
+      <Button
+        onButtonClick={handleActionClick}
         animate={{
           rotate: isOpen ? -45 : 0,
           transition: { duration: 0.1 },
         }}
       >
         add
-      </motion.span>
+      </Button>
       <Link href={menuList[0].to} onClick={handleUpButtonClick}>
-        <span className={iconClassName}>arrow_upward</span>
+        <Button>arrow_upward</Button>
       </Link>
     </div>
   );
