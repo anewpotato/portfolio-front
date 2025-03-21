@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { navigationSlice } from './navigation/navigationSlice';
+import { darkmodeSlice } from './darkmode/darkmodeSlice';
 
 export const store = configureStore({
   reducer: {
     navigation: navigationSlice.reducer,
+    darkmode: darkmodeSlice.reducer,
   },
 });
 

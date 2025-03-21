@@ -1,5 +1,6 @@
 'use client';
 
+import useRedux from '@src/hooks/useRedux';
 import { usePathname } from 'next/navigation';
 
 export default function SnapWrapper({
@@ -10,10 +11,12 @@ export default function SnapWrapper({
   const pathname = usePathname();
   const isProjectPage = pathname.startsWith('/projects/');
 
+  const [isDarkMode] = useRedux<boolean>('darkmode');
+
   return (
     <html
       lang="kr"
-      className={`scroll-smooth h-screen overflow-y-scroll ${
+      className={`${isDarkMode ? 'dark' : ''} bg-white dark:bg-gray-800 scroll-smooth h-screen overflow-y-scroll ${
         !isProjectPage ? 'snap-y snap-mandatory' : ''
       }`}
     >

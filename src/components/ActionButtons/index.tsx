@@ -9,11 +9,14 @@ import Link from 'next/link';
 import { motion, useAnimation } from 'framer-motion';
 import { useState } from 'react';
 import FileSaver from 'file-saver';
+import { setDarkMode } from '@src/store/darkmode/darkmodeSlice';
 import Button from './Button';
 
 export default function ActionButtons() {
   const [{ list: menuList }, updater] =
     useRedux<NavigationSliceType>('navigation');
+
+  const [isDarkMode, darkmodeUpdater] = useRedux<boolean>('darkmode');
   const controls = useAnimation();
 
   const [isOpen, setIsOpen] = useState(false);
@@ -31,6 +34,10 @@ export default function ActionButtons() {
     FileSaver.saveAs('pdf/download.pdf', '유승종 이력서.pdf');
   };
 
+  const handleDarkModeClick = () => {
+    darkmodeUpdater(setDarkMode, !isDarkMode);
+  };
+
   return (
     <div className="fixed bottom-10 sm:right-1 md:right-5 flex flex-col gap-2">
       <motion.div
@@ -45,7 +52,9 @@ export default function ActionButtons() {
       >
         <Button onButtonClick={handleFileDownloadClick}>file_save</Button>
 
-        <Button>dark_mode</Button>
+        <Button onButtonClick={handleDarkModeClick}>
+          {isDarkMode ? 'light_mode' : 'dark_mode'}
+        </Button>
       </motion.div>
       <Button
         onButtonClick={handleActionClick}

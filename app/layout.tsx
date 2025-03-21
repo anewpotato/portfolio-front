@@ -36,9 +36,9 @@ export default function RootLayout({
   modal: React.ReactNode;
 }) {
   return (
-    <SnapWrapper>
-      <body className="min-w-fit flex flex-col">
-        <ReduxProvider>
+    <ReduxProvider>
+      <SnapWrapper>
+        <body className="min-w-fit flex flex-col">
           <Header />
           <main className="flex-1 sm:container mx-auto py-10 flex flex-col gap-32">
             {children}
@@ -48,8 +48,8 @@ export default function RootLayout({
           </main>
           <Footer />
           <ActionButtons />
-        </ReduxProvider>
-      </body>
-    </SnapWrapper>
+        </body>
+      </SnapWrapper>
+    </ReduxProvider>
   );
 }
