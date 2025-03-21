@@ -1,4 +1,5 @@
 import { MotionProps, motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 
 interface ButtonPropsType {
   children: string;
@@ -10,6 +11,18 @@ export default function Button({
   onButtonClick = () => {},
   animate,
 }: ButtonPropsType & MotionProps) {
+  const [isIconLoaded, setIsIconLoaded] = useState(false);
+
+  useEffect(() => {
+    document.fonts.ready.then(() => {
+      setIsIconLoaded(true);
+    });
+  }, []);
+
+  if (!isIconLoaded) {
+    return null;
+  }
+
   return (
     <motion.button
       type="button"
