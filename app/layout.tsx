@@ -8,6 +8,7 @@ import { IconDescriptor } from 'next/dist/lib/metadata/types/metadata-types';
 import SnapWrapper from '@src/components/lib/SnapWrapper';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/next';
+import ActionButtons from '@src/components/ActionButtons';
 
 export interface CustomIconDescriptorType extends IconDescriptor {
   precedence?: string;
@@ -46,6 +47,7 @@ export default function RootLayout({
             <Analytics />
           </main>
           <Footer />
+          <ActionButtons />
         </ReduxProvider>
       </body>
     </SnapWrapper>
