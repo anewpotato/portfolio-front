@@ -28,10 +28,7 @@ export default function ActionButtons() {
   };
 
   const handleFileDownloadClick = () => {
-    FileSaver.saveAs(
-      '/pdf/download.pdf',
-      encodeURIComponent('[유승종]이력서.pdf'),
-    );
+    FileSaver.saveAs('pdf/download.pdf', '[유승종]이력서.pdf');
   };
 
   return (
