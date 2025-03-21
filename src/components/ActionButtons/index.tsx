@@ -8,6 +8,8 @@ import {
 import Link from 'next/link';
 import { motion, useAnimation } from 'framer-motion';
 import { useState } from 'react';
+import FileSaver from 'file-saver';
+import Button from './Button';
 
 const iconClassName =
   'material-symbols-rounded rounded-full sm:p-1 md:p-2 lg:p-3 cursor-pointer border bg-emerald-300 text-white icon-style icon-weight-700 icon-optical-size-24';
@@ -28,16 +30,24 @@ export default function ActionButtons() {
     controls.start(isOpen ? 'hidden' : 'visible');
   };
 
+  const handleFileDownloadClick = () => {
+    FileSaver.saveAs('/pdf/download.pdf', '[유승종]이력서.pdf');
+  };
+
   return (
     <div className="fixed bottom-10 right-5 flex flex-col gap-2">
       <motion.div
         className="flex flex-col gap-2"
         initial="hidden"
         animate={controls}
-        variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
+        variants={{
+          hidden: { opacity: 0, display: 'none' },
+          visible: { opacity: 1, display: 'flex' },
+        }}
         transition={{ duration: 0.3, ease: 'easeIn' }}
       >
-        <span className={iconClassName}>file_save</span>
+        <Button onButtonClick={handleFileDownloadClick}>file_save</Button>
+
         <span className={iconClassName}>dark_mode</span>
       </motion.div>
       <motion.span
