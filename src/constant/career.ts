@@ -11,12 +11,10 @@ export const careerInformation: CareerInformationType[] = [
     position: '팀원',
     role: 'Frontend Developer',
     result: [
-      '보안 솔루션 관리자 웹 플랫폼 고도화.',
-      '재사용 가능한 공통 UI 컴포넌트 설계 및 개발.',
-      '보안 솔루션 고도화 프로젝트 참여.',
-      '신기술을 도입을 통한 Frontend 성능 최적화 담당.',
-      'CI/CD 인프라 및 프로젝트 개발 환경 구축.',
-      '신규 프로젝트 프로토타입 개발 전담.',
+      'Frontend 전반적인 개발 환경 설계 및 구축.',
+      '재사용 가능한 공통 컴포넌트 설계 및 개발.',
+      'UI 구성, 성능 최적화 및 기능 개발.',
+      'Publisher 및 Backend Developer와 협업하여 프로토타입 프로젝트 Frontend 개발 담당.',
     ],
   },
 ];
