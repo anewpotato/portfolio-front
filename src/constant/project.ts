@@ -119,7 +119,7 @@ Props 관리 및 컴포넌트 확장 방식을 제안하여 도입.
       'git',
     ],
     progress: 0,
-    image: 'platform.png',
+    image: 'platform.svg',
     description: `고도화 웹 플랫폼 내 Javascript, Material-UI 기반 공통 컴포넌트의 Runtime 안정성,
 디자인 유연성 개선 및 버전 관리를 위해 Atomic 디자인 패턴 기반으로 Typescript, Tailwind
 CSS로 전환 후 NPM 패키지로 관리할 수 있도록 개선한 프로젝트.`,

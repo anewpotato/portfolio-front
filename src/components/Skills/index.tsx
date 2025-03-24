@@ -9,6 +9,9 @@ export default function Skills() {
 
   return (
     <div className="w-full flex flex-col gap-3">
+      <div className="text-sm text-right text-gray-500 dark:text-slate-300">
+        ※ 상세히 보기에 기록된 내용은 개괄적으로 작성하였습니다.
+      </div>
       <Category
         list={skillsViewFilter}
         selectedIndex={selectedView}
