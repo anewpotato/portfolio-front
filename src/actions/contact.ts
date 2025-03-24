@@ -2,7 +2,9 @@
 
 import { FetchResponseType } from '@src/types';
 
-export async function submitContact(formData): Promise<FetchResponseType> {
+export async function submitContact(
+  formData: FormData,
+): Promise<FetchResponseType> {
   const targetUrl =
     'https://script.google.com/macros/s/AKfycbyJmCrNjZNLa4D0UIClh3SSAG4XBio7U912X_5sbUSwB9jL2IQm-ihWLnBwgnBLah8g/exec';
 

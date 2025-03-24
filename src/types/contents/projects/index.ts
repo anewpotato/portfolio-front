@@ -8,6 +8,7 @@ export type ProjectsInformationType = {
   description: string;
   role: string;
   result: { category: string; list: string[] }[];
+  company: { text: string; color: string };
 };
 
 export type ProjectDetailProps = {

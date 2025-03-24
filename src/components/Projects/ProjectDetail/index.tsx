@@ -19,13 +19,19 @@ export default function ProjectDetail({ id }: ProjectDetailPropsType) {
     description,
     role,
     result,
+    company,
   }: ProjectsInformationType = projectsInformation.find(
     (info) => info.id === Number(id),
   );
 
   return (
     <div className="h-vh flex flex-col gap-6 relative">
-      <ProjectTitle title={title} progress={progress} period={period} />
+      <ProjectTitle
+        title={title}
+        progress={progress}
+        period={period}
+        company={company}
+      />
       <ProjectImage image={image} />
       <ProjectSkills skills={skills} />
       <div className="flex flex-col gap-8">

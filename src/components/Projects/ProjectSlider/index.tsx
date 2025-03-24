@@ -99,23 +99,26 @@ export default function ProjectSlider({
             <AnimatePresence>
               {projectsInformation
                 .filter(({ progress }) => progress === selectedProgress)
-                .map(({ id, title, skills, progress, image }, index) => {
-                  const position = getCardPosition(index);
-                  if (position === 'hidden') return null;
+                .map(
+                  ({ id, title, skills, progress, image, company }, index) => {
+                    const position = getCardPosition(index);
+                    if (position === 'hidden') return null;
 
-                  return (
-                    <Card
-                      key={id}
-                      id={id}
-                      position={position}
-                      title={title}
-                      skills={skills}
-                      windowWidth={windowWidth}
-                      progress={progress}
-                      image={image}
-                    />
-                  );
-                })}
+                    return (
+                      <Card
+                        key={id}
+                        id={id}
+                        position={position}
+                        title={title}
+                        skills={skills}
+                        windowWidth={windowWidth}
+                        progress={progress}
+                        image={image}
+                        company={company}
+                      />
+                    );
+                  },
+                )}
             </AnimatePresence>
             <ArrowButton
               className="right-0"

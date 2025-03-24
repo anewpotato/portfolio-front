@@ -3,7 +3,7 @@ import { ProjectsInformationType } from '@src/types/contents/projects';
 export const projectsInformation: ProjectsInformationType[] = [
   {
     id: 0,
-    title: 'Hanssak 디자인 시스템',
+    title: '디자인 시스템',
     period: '2024.06 ~ 2024.12',
     skills: [
       'HTML',
@@ -43,6 +43,7 @@ export const projectsInformation: ProjectsInformationType[] = [
         ],
       },
     ],
+    company: { text: '(주)한싹', color: '#00652a' },
   },
   {
     id: 1,
@@ -99,6 +100,7 @@ Props 관리 및 컴포넌트 확장 방식을 제안하여 도입.
         ],
       },
     ],
+    company: { text: '(주)한싹', color: '#00652a' },
   },
   {
     id: 2,
@@ -150,10 +152,11 @@ Props 관리 및 컴포넌트 확장 방식을 제안하여 도입.
         ],
       },
     ],
+    company: { text: '(주)한싹', color: '#00652a' },
   },
   {
     id: 3,
-    title: '보안 솔루션 프로토타입 구축',
+    title: '보안 솔루션 프로토타입',
     period: '2022.04 ~ 2024.06',
     skills: [
       'CSS',
@@ -204,6 +207,7 @@ Props 관리 및 컴포넌트 확장 방식을 제안하여 도입.
         ],
       },
     ],
+    company: { text: '(주)한싹', color: '#00652a' },
   },
 
   {
@@ -261,5 +265,6 @@ Props 관리 및 컴포넌트 확장 방식을 제안하여 도입.
         ],
       },
     ],
+    company: { text: '개인 프로젝트', color: '#f87171' },
   },
 ];

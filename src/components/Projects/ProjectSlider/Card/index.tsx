@@ -38,6 +38,7 @@ export default function Card({
   title,
   skills,
   image,
+  company,
 }: Omit<
   ProjectsInformationType,
   'period' | 'description' | 'role' | 'result'
@@ -74,7 +75,7 @@ export default function Card({
         href={`/image/projects/${image}`}
         target="_blank"
       >
-        <div className="relative h-full border-2 flex-1 shadow-xl">
+        <div className="relative h-full border-2 flex-1 shadow-xl dark:bg-white">
           <Image
             priority
             alt=""
@@ -84,7 +85,12 @@ export default function Card({
           />
         </div>
       </Link>
-
+      <div
+        className="w-fit px-2 py-1 border text-white rounded-md text-sm"
+        style={{ background: company.color }}
+      >
+        {company.text.toUpperCase()}
+      </div>
       {windowWidth >= 768 && <ProjectSkills skills={skills} />}
     </motion.div>
   );
