@@ -14,6 +14,7 @@ export const projectsInformation: ProjectsInformationType[] = [
       'tailwindcss',
       'google material icon',
       'storybook',
+      'npm',
       'eslint',
       'prettier',
       'git',

@@ -134,6 +134,14 @@ export const skillsInformation: SkillsInformationType = [
       ],
     },
     {
+      key: 'npm',
+      description: [
+        'npm에 대해 이해.',
+        '사내 저장소와 연동하여 패키징 가능.',
+        '디자인 시스템 관리 경험.',
+      ],
+    },
+    {
       key: 'git',
       description: [
         '핵심 기능에 대해 이해.',
