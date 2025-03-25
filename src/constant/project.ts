@@ -230,38 +230,20 @@ export const projectsInformation: ProjectsInformationType[] = [
     ],
     progress: 1,
     image: 'portfolio.png',
-    description: `고도화 웹 플랫폼 내 Javascript, Material-UI 기반 공통 컴포넌트의 Runtime 안정성,
-디자인 유연성 개선 및 버전 관리를 위해 Atomic 디자인 패턴 기반으로 Typescript, Tailwind
-CSS로 전환 후 NPM 패키지로 관리할 수 있도록 개선한 프로젝트.`,
-    role: 'CRA(Create React App)를 활용한 개발 환경 및 사내 Nexus 저장소 NPM Package 배포 가이드를 작성하고, Atomic Design Pattern을 바탕으로 컴포넌트의 설계 및 개발 업무 수행.',
+    description:
+      '개인적으로 부족함을 느꼈던 Typescript와 더불어 Next.js 13+ 및 React 18+에 대해 학습하고, 실제 적용해보고자 진행한 프로젝트입니다. 또한, 제 경력 상 모든 프로젝트가 폐쇄망 환경에서 진행되었고 그에 따라 보여줄 수 있는 결과물이 없다고 느껴져서 진행하였고 그 과정에서 평소에 사용해보고 싶었던 기술들을 적용해보았습니다. 비록 많은 기능은 없지만 하나씩 쌓아 갈 생각입니다.',
+    role: '4년의 경력에서 느꼈던 웹 개발의 흐름에 필요한 기획, 디자인, 개발을 혼자 진행 해 보았습니다.',
     result: [
       {
-        category: '컴포넌트 모듈 전환 및 최적화',
+        category: '기능 개발',
         list: [
-          `- Atomic 디자인 패턴을 기반으로 기존 컴포넌트의 관심사를 분리하고 세분화하여 재사용성 및
-유지보수성 향상을 고려한 설계에 참여. (ex. as-is: 주요 컴포넌트 약 10개, to-be: atom 컴
-포넌트 약 20개로 세분화)
-`,
-          `약 20개의 컴포넌트를 Typescript로 작성하여 컴포넌트에 전달되는 Props Type의 체크로
-개발 단계에서 에러를 확인할 수 있게 하고, Tailwind CSS로 적용으로 컴포넌트 경량화를 통해
-초기 렌더링 성능 향상에 기여.`,
-          `- 기존 무분별한 컴포넌트 확장으로 인한 유지보수 비용 증가 문제를 해결하기 위해 제한적인
-Props 관리 및 컴포넌트 확장 방식을 제안하여 도입.
-`,
-        ],
-      },
-      {
-        category: ' 개발 환경 구축 및 문서화',
-        list: [
-          `CRA(Create React App), Tailwind CSS, Typescript, ESLint, Prettier 등 초기 개발 환
-경을 구축을 주도하여 컴포넌트 전환 및 신규 개발 생산성 향상에 기여.
-`,
-          `사내 Nexus 저장소에 NPM 패키징 및 배포 환경을 구축하여 버전 관리 및 컴포넌트 이력 추
-적 가능하도록 개선.
-`,
-          `프로젝트 빌드 및 패키지 설치 가이드를 문서화하여 동료 개발자들이 손쉽게 접근하고 활용할
-수 있도록 지원.
-`,
+          'Parallel Route와 Intercept Route를 사용하여 Modal 구현.',
+          'TailwindCSS를 활용해 컴포넌트 단위의 빠른 스타일링 적용 및 반응형 레이아웃 구성.',
+          'DarkMode 스타일링 구현.',
+          'Google Material Icons CDN 사용을 위한 IconDescriptor 확장 및 FOTI 문제 Display block으로 해결.',
+          'Framer-motion을 활용한 애니메이션 구현.',
+          'Google Spread Sheet를 활용해 별도 서버 없이 Contact 메일 전송 기능 개발.',
+          '개인 이력서 다운로드 기능 개발.',
         ],
       },
     ],
