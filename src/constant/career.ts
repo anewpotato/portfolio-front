@@ -15,6 +15,7 @@ export const careerInformation: CareerInformationType[] = [
       '재사용 가능한 공통 컴포넌트 설계 및 개발.',
       'UI 구성, 성능 최적화 및 기능 개발.',
       'Publisher 및 Backend Developer와 협업하여 프로토타입 프로젝트 Frontend 개발 담당.',
+      'Legacy Project 유지 보수.',
     ],
   },
 ];

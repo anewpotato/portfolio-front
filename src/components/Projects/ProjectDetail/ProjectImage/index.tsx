@@ -7,7 +7,7 @@ export default function ProjectImage({
 }: Pick<ProjectsInformationType, 'image'>) {
   return (
     <Link href={`/image/projects/${image}`} target="_blank">
-      <div className="relative w-full min-h-96 border-2 border-black/50">
+      <div className="relative w-full min-h-96 border-2 border-black/50 dark:bg-white">
         <Image
           priority
           alt=""
