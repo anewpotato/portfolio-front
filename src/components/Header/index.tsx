@@ -1,6 +1,7 @@
+import Link from 'next/link';
+
 import { pacificoFont } from '@src/constant/fonts';
 import Navigation from './Navigation';
-import Link from 'next/link';
 
 export default function Header() {
   return (
