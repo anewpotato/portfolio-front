@@ -10,7 +10,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/next';
 import ActionButtons from '@src/components/ActionButtons';
 
-export interface CustomIconDescriptorType extends IconDescriptor {
+interface CustomIconDescriptorType extends IconDescriptor {
   precedence?: string;
 }
 
