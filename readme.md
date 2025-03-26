@@ -1,4 +1,4 @@
-## Yu SeungJong Portfolio - Frontend
+## <img src="public/favicon.ico" width="20px" height="20px"  alt=""/> Yu SeungJong Portfolio - Frontend
 
 ## [방문 링크](https://yuseungjong-portfolio.vercel.app/)
 
