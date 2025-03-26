@@ -225,3 +225,28 @@
    return output;
    }
    ```
+
+4. 반응형 레이아웃 구현 시, 브라우저 크기 확인 로직으로 인한 반복적인 렌더링 문제.
+
+   - loadash의 debounce를 활용해 이벤트 호출 최소화.
+
+   ```
+   import debounce from 'lodash/debounce';
+
+   export default function useWindowWidth() {
+   const [windowWidth, setWindowWidth] = useState<number>(0);
+
+   useEffect(() => {
+       setWindowWidth(window.innerWidth);
+       const handleResize = debounce(() => {
+       setWindowWidth(window.innerWidth);
+       }, 100);
+
+       window.addEventListener('resize', handleResize);
+       return () => window.removeEventListener('resize', handleResize);
+   }, []);
+
+   return windowWidth;
+   }
+
+   ```
