@@ -105,7 +105,7 @@ export const projectsInformation: ProjectsInformationType[] = [
 
   {
     id: 3,
-    title: '보안 솔루션 프로토타입 구축',
+    title: '보안 솔루션 관리자 웹 프로토타입 구축',
     period: '2023.06 ~ 2024.06',
     skills: [
       'CSS',

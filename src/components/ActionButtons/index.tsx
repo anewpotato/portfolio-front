@@ -31,7 +31,7 @@ export default function ActionButtons() {
   };
 
   const handleFileDownloadClick = () => {
-    FileSaver.saveAs('pdf/download.pdf', '유승종 이력서.pdf');
+    FileSaver.saveAs('pdf/resume_유승종.pdf', 'resume_유승종.pdf');
   };
 
   const handleDarkModeClick = () => {

@@ -11,11 +11,13 @@ export const careerInformation: CareerInformationType[] = [
     position: '팀원',
     role: 'Frontend Developer',
     result: [
-      'Frontend 전반적인 개발 환경 설계, 구축 및 프로젝트 관리.',
+      'React와 Next.js를 활용한 고도화 아키텍처 설계 및 구축.',
+      '사내 여러 프로젝트에서 사용할 수 있는 디자인 시스템 구축.',
       '재사용 가능한 공통 컴포넌트 설계 및 개발.',
-      'UI 구성, 기능 개발 및 성능 최적화.',
-      'Publisher 및 Backend Developer와 협업하여 프로토타입 프로젝트 Frontend 개발 담당.',
-      'Legacy Project 유지 보수.',
+      '기존 시스템의 리팩토링을 통한 성능 및 유지보수성 개선.',
+      '보안 솔루션 고도화 프로젝트 Frontend 배포 전략 수립.',
+      '전사 기술 세미나를 주도해 사내 Frontend 개발 역량 강화.',
+      '레거시 프로젝트 유지보수 지원.',
     ],
   },
 ];
