@@ -115,7 +115,6 @@ export const projectsInformation: ProjectsInformationType[] = [
       'redux',
       'mui',
       'docker',
-      'storybook',
       'eslint',
       'prettier',
       'git',
